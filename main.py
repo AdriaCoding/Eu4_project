@@ -6,6 +6,7 @@ all_files = os.listdir("countries/")
 print(all_files.__sizeof__())
 countries_with_religious = []
 countries_with_humanist = []
+countries_with_economic = []
 countries_with_admin = []
 countries_with_setup = []
 
@@ -13,7 +14,7 @@ countries_with_setup = []
 reli_count = 0
 humanist_count = 0
 admin_count = 0
-ARwithoutEc_count = 0
+eco_count = 0
 total = 0
 
 print (True and True and not False)
@@ -45,6 +46,8 @@ for file in all_files :
             if line.strip() == "innovativeness_ideas":
                 has_inno = True
             if line.strip() == "economic_ideas":
+                eco_count += 1
+                countries_with_economic.append(file)
                 has_eco = True
             if line.strip() == "expansion_ideas":
                 has_expan = True
@@ -60,6 +63,8 @@ print("\nFound {} countries with humanist ideas, that is {}% ".format(humanist_c
 print(countries_with_humanist)
 print("\nFound {} countries with administrative, that is {}% ".format(admin_count, (admin_count / total) * 100))
 print(countries_with_admin)
+print("\nFound {} countries with economic, that is {}% ".format(eco_count, (eco_count / total) * 100))
+print(countries_with_economic)
 xd_count = len(countries_with_setup)
 print("\nFound {} countries with the desired setup, that is {}% ".format(xd_count, (xd_count / total) * 100))
 print(countries_with_setup)
